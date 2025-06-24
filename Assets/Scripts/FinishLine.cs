@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FinishLine : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class FinishLine : MonoBehaviour
         {
             Debug.Log("Player has crossed the finish line!");
             // You can add more logic here, like updating the game state or triggering an event.
+            SceneManager.LoadScene(0); // Reload the current scene
         }
     }
 }
