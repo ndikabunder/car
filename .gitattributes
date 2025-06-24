@@ -1,0 +1,47 @@
+
+# ========== UNITY GITATTRIBUTES CONFIG ==========
+
+# Force consistent line endings to LF for common Unity files
+*.cs         text eol=lf
+*.shader     text eol=lf
+*.cginc      text eol=lf
+*.compute    text eol=lf
+*.hlsl       text eol=lf
+*.glsl       text eol=lf
+*.uxml       text eol=lf
+*.uss        text eol=lf
+*.asmdef     text eol=lf
+*.json       text eol=lf
+*.xml        text eol=lf
+*.txt        text eol=lf
+*.meta       text eol=lf
+*.unity      text eol=lf
+*.prefab     text eol=lf
+*.mat        text eol=lf
+*.asset      text eol=lf
+
+# Prevent Git from messing with binary files
+*.png        binary
+*.jpg        binary
+*.jpeg       binary
+*.psd        binary
+*.fbx        binary
+*.mp3        binary
+*.ogg        binary
+*.wav        binary
+*.tga        binary
+*.unitypackage binary
+*.dll        binary
+*.exe        binary
+
+# Ignore CRLF/LF normalization for binary files
+*.cubemap    binary
+*.anim       binary
+*.controller binary
+
+# Optional: mark YAML as text with LF
+*.yaml       text eol=lf
+*.yml        text eol=lf
+
+# Catch-all default
+* text=auto
