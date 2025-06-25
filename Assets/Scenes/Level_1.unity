@@ -237,6 +237,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loadDelay: 1
+  finishEffect: {fileID: 1983284180}
 --- !u!61 &197767984
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -532,7 +533,7 @@ Transform:
   m_GameObject: {fileID: 377983115}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -24.4, y: 5.27, z: 0}
+  m_LocalPosition: {x: -24.9, y: 3.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -628,7 +629,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3117d6a63d80cb5429c44faabc3c4e19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  torqueAmount: 10
+  torqueAmount: 3
   rotationSpeed: 90
 --- !u!114 &377983124
 MonoBehaviour:
@@ -643,6 +644,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loadDelay: 1
+  crashEffect: {fileID: 1844447424}
 --- !u!70 &377983125
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -767,7 +769,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -19.369999, y: 5.27, z: -10}
+  m_LocalPosition: {x: -19.869999, y: 3.4, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -875,7 +877,7 @@ Transform:
   m_GameObject: {fileID: 569489399}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -19.369999, y: 5.27, z: -10}
+  m_LocalPosition: {x: -19.869999, y: 3.4, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1706,7 +1708,7 @@ ParticleSystem:
   emitterVelocityMode: 1
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   startDelay:
@@ -6539,7 +6541,7 @@ ParticleSystem:
   emitterVelocityMode: 1
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   startDelay:
