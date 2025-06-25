@@ -18,6 +18,8 @@ public class FinishLine : MonoBehaviour
                 finishEffect.Play(); // Play the finish effect if you have one set up
             }
 
+            GetComponent<AudioSource>().Play(); // Play the finish sound effect
+            
             Invoke("ReloadScene", loadDelay); // Reload the scene after the specified delay
         }
     }

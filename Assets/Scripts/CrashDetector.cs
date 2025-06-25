@@ -6,6 +6,7 @@ public class CrashDetector : MonoBehaviour
     CapsuleCollider2D playerHead;
     [SerializeField] float loadDelay = 1f;
     [SerializeField] ParticleSystem crashEffect; // Optional: Particle effect to play on crash
+    [SerializeField] AudioClip crashSound; // Optional: Sound effect to play on crash
 
     void Start()
     {
@@ -21,6 +22,13 @@ public class CrashDetector : MonoBehaviour
             if (crashEffect != null)
             {
                 crashEffect.Play(); // Play the crash effect if you have one set up
+            }
+
+            // Kenapa tidak audio tidak jalan 1 kali?
+
+            if (crashSound != null)
+            {
+                GetComponent<AudioSource>().PlayOneShot(crashSound); // Play the crash sound effect
             }
 
             Invoke("ReloadScene", loadDelay); // Reload the scene after the specified delay
