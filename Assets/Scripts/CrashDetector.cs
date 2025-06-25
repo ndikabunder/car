@@ -8,6 +8,8 @@ public class CrashDetector : MonoBehaviour
     [SerializeField] ParticleSystem crashEffect; // Optional: Particle effect to play on crash
     [SerializeField] AudioClip crashSound; // Optional: Sound effect to play on crash
 
+    bool isCrashed = false; // Flag to prevent multiple crashes
+
     void Start()
     {
         playerHead = GetComponent<CapsuleCollider2D>();
@@ -15,9 +17,10 @@ public class CrashDetector : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.tag == "Ground" && playerHead.IsTouching(other.collider))
+        if (other.gameObject.tag == "Ground" && !isCrashed && playerHead.IsTouching(other.collider))
         {
             Debug.Log("Hit my Head!!");
+            isCrashed = true; // Set the flag to prevent multiple crashes
 
             FindObjectOfType<PlayerController>().DisableControls(); // Disable player controls on crash
 
