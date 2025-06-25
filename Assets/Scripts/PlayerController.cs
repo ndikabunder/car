@@ -12,6 +12,8 @@ public class PlayerController : MonoBehaviour
     public float rotationSpeed = 90f; // derajat per detik (sumbu Z)
     private GameObject[] wheels;
 
+    bool canMove = true; // Flag to control player movement
+
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
@@ -22,8 +24,16 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        RotatePlayer();
-        RespondBoost();
+        if (canMove)
+        {
+            RespondBoost();
+            RotatePlayer();
+        }
+    }
+
+    public void DisableControls()
+    {
+        canMove = false; // Disable player movement
     }
 
     void RespondBoost()

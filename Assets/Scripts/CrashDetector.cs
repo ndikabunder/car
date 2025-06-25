@@ -19,6 +19,8 @@ public class CrashDetector : MonoBehaviour
         {
             Debug.Log("Hit my Head!!");
 
+            FindObjectOfType<PlayerController>().DisableControls(); // Disable player controls on crash
+
             if (crashEffect != null)
             {
                 crashEffect.Play(); // Play the crash effect if you have one set up
