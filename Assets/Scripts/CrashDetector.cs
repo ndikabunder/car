@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 public class CrashDetector : MonoBehaviour
 {
     CapsuleCollider2D playerHead;
-    [SerializeField] float loadDelay = 1f;
+    [SerializeField] float loadDelay = 10f;
     [SerializeField] ParticleSystem crashEffect; // Optional: Particle effect to play on crash
     [SerializeField] AudioClip crashSound; // Optional: Sound effect to play on crash
 
@@ -22,7 +22,7 @@ public class CrashDetector : MonoBehaviour
             Debug.Log("Hit my Head!!");
             isCrashed = true; // Set the flag to prevent multiple crashes
 
-            FindObjectOfType<PlayerController>().DisableControls(); // Disable player controls on crash
+            FindFirstObjectByType<PlayerController>().DisableControls(); // Disable player controls on crash
 
             if (crashEffect != null)
             {
@@ -36,12 +36,19 @@ public class CrashDetector : MonoBehaviour
                 GetComponent<AudioSource>().PlayOneShot(crashSound); // Play the crash sound effect
             }
 
+            CrashUIManager crashUI = FindObjectOfType<CrashUIManager>();
+            if (crashUI != null)
+            {
+                crashUI.ShowCrashPanel();
+            }
+
             Invoke("ReloadScene", loadDelay); // Reload the scene after the specified delay
         }
     }
     
     void ReloadScene()
     {
-        SceneManager.LoadScene(0);
+        Scene currentScene = SceneManager.GetActiveScene(); // ambil scene yang sedang aktif
+        SceneManager.LoadScene(currentScene.name); // reload scene berdasarkan nama
     }
 }

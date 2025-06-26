@@ -34,6 +34,8 @@ public class PlayerController : MonoBehaviour
     public void DisableControls()
     {
         canMove = false; // Disable player movement
+
+        surfaceEffector2D.speed = 0; // Stop the surface effector
     }
 
     void RespondBoost()

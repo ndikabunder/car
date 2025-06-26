@@ -26,6 +26,16 @@ public class FinishLine : MonoBehaviour
 
     void ReloadScene()
     {
-        SceneManager.LoadScene(0);
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        int nextSceneIndex = currentSceneIndex + 1;
+
+        if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
+        {
+            SceneManager.LoadScene(nextSceneIndex); // lanjut ke scene berikutnya
+        }
+        else
+        {
+            SceneManager.LoadScene(0); // kalau sudah scene terakhir, balik ke awal
+        }
     }
 }
